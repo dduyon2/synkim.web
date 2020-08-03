@@ -1,0 +1,3 @@
+	@	type	@	ruleId	@	name	@	keyField	@	order	@	command
+	@	Detect	@	4350	@	4350 - ISMM-1 SNIPER FTP Login Brute Force Brute_Force_Attack	@	16	@	3,4,5,20	@	
+	@	Detect	@	4351	@	4351 - ISMM-1 IBM TLS_Heartbeat_Long_Response	@	16	@	4,5	@	

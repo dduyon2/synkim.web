@@ -1,0 +1,4 @@
+type,ruleId,name,keyField,order,command,
+,Detect,4350,4350 - ISMM-1 SNIPER FTP Login Brute Force Brute_Force_Attack,16,3,4,5,20,,
+,Detect,4351,4351 - ISMM-1 IBM TLS_Heartbeat_Long_Response,16,4,5,,
+,Detect,4392,4392 - ISMM-1 Qradar XL_Games_Rule_부서별 지정 GW_Server 외 다른 접속 시도(111),16,4,5,,

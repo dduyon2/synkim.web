@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Secudium IOT</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/correlation.css">
+    <script type="text/javascript" src="js/correlationForm.js"></script>
+
+    <style>
+        body {
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1 class="header_title">
+        <div class="header_content">Secudium IOT</div>
+    </h1>
+</header>
+<div class="sidebar">
+    <a href="index.html">Live Detect Rule</a>
+    <a href="Threshold.html">Threshold Detect Rule</a>
+    <a class="active" ref="correlation.html"> Correlation Detect Rule</a>
+</div>
+<div class="content">
+    <div class="btnGroup"  id="btn_group">
+        <button id="add">ADD</button>
+        <button id="delete">DELETE</button>
+        <button id="import">IMPORT</button>
+        <button id="export">EXPORT</button>
+    </div>
+</div>
+
+<div class="bg-modal">
+    <div class="threshold_modal-content">
+        <div class="close">+</div>
+        <header class="form_header"> 상관 분석 룰 추가 </header>
+        <form action="" class="correlationForm" id="correlation_input">
+            <div class="input_rule">
+                <label for="num_of_Crul">Ring 갯수</label>
+                <input type="text" name ='num_of_Crul' id="num_of_Crul">
+                <label for="name_of_Crul">RuleName</label>
+                <input type="text" name ='name_of_Crul' id="name_of_Crul">
+                <input type="button" id="confirm" onclick="getNumber()" value="적용">
+            </div>
+            <div id="rule_content">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+
+    document.getElementById('btn_group').addEventListener("click", function (event) {
+        buttonClick(event.target.id);
+    });
+
+
+    function buttonClick(id) {
+        switch (id) {
+            case "add":
+                addDt();
+                break;
+            case "delete":
+                deleteData();
+                break;
+            case "import":
+                importData();
+                break;
+            case "export":
+                exportData();
+                break;
+            default:
+                break;
+        }
+    }
+
+    function addDt() {
+        document.querySelector('.bg-modal').style.display = 'flex';
+    }
+    document.querySelector('.close').addEventListener('click', function () {
+        document.querySelector('.bg-modal').style.display = 'none';
+    });
+</script>
+
+</body></html>

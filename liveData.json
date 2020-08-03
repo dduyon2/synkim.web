@@ -1,0 +1,26 @@
+[
+ {
+   "type": "Detect",
+   "ruleId": "4350",
+   "name": "4350 - ISMM-1 SNIPER FTP Login Brute Force Brute_Force_Attack",
+   "keyField": "16",
+   "order": "3,4,5,20",
+   "command": ""
+ },
+ {
+   "type": "Detect",
+   "ruleId": "4351",
+   "name": "4351 - ISMM-1 IBM TLS_Heartbeat_Long_Response",
+   "keyField": "16",
+   "order": "4,5",
+   "command": ""
+ },
+ {
+   "type": "Detect",
+   "ruleId": "4392",
+   "name": "4392 - ISMM-1 Qradar XL_Games_Rule_부서별 지정 GW_Server 외 다른 접속 시도(111)",
+   "keyField": "16",
+   "order": "4,5",
+   "command": ""
+ }
+]

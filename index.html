@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Secudium IOT</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <script type="text/javascript" src="js/DataTable.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1 class="header_title">
+        <div class="header_content">Secudium IOT</div>
+    </h1>
+</header>
+<div class="sidebar">
+    <a class="active" href="index.html">Live Detect Rule</a>
+    <a href="Threshold.html">Threshold Detect Rule</a>
+    <a href="correlation.html"> Correlation Detect Rule</a>
+</div>
+<div class="content">
+    <div class="columnName">
+        <input type="text" id="inputColumn" required="" value="">
+        <button id="fieldChk"></button>
+    </div>
+    <div class="btnGroup" id="btn_group">
+        <button id="add" type="button">ADD</button>
+        <button id="delete" type="button">DELETE</button>
+        <label for="import">IMPORT</label>
+        <input id="import" type="file">
+        <button id="export" type="button">EXPORT</button>
+    </div>
+    <div id="data"></div>
+</div>
+
+<div class="bg-modal">
+    <div class="modal-content">
+        <div class="close">+</div>
+        <header> 실시간 탐지 룰 추가</header>
+        <form action="" class="contact-form">
+            <div class="form">
+                <div class="input_field">
+                    <label>Type</label>
+                    <div class="custom_select">
+                        <select>
+                            <option value="">Type</option>
+                            <option name = "Type" value="1000">Detect</option>
+                            <option name = "Type" value="0100">Filter</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input_field">
+                    <label for="ruleId">Rule ID</label>
+                    <input name="RuleID" type="text" id="ruleId">
+                </div>
+                <div class="input_field">
+                    <label for="ruleNm">rule name</label>
+                    <input name="Name" type="text" id="ruleNm">
+                </div>
+                <div class="input_field">
+                    <label> Key Field </label>
+                    <div class="custom_select">
+                        <select>
+                            <option value=""></option>
+                            <option name="KeyField" value="0100">16:Signature</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input_field">
+                    <label for="order">Order</label>
+                    <input name="Order" type="text" id="order">
+                </div>
+                <div class="input_field">
+                    <label for="command">Command</label>
+                    <input name="Command" type="text" id="command">
+                </div>
+
+                <input type="button" id="addBtn" onclick="getRule()" value="확인">
+            </div>
+        </form>
+
+    </div>
+</div>
+<script>
+    var fields = [];
+    var liveRuleData=[];
+    // $(document).ready(function () {
+    //todo : 원래는 db연결한 상태에서 연결한 db의 데이터 읽어오는 function호출.
+    //     createTable();
+    //     fields = setFields();
+    // });
+
+
+    function addDt() {
+        document.querySelector('.bg-modal').style.display = 'flex';
+    }
+
+    document.querySelector('.close').addEventListener('click', function () {
+        document.querySelector('.bg-modal').style.display = 'none';
+    });
+    const form = document.getElementsByClassName('contact-form')[0];
+    form.addEventListener('submit', function () {
+        handleFormSubmit;
+        addData(dt);
+    });
+
+
+    function buttonClick(id) {
+        switch (id) {
+            case "add":
+                addDt();
+                break;
+            case "delete":
+                deleteData();
+                break;
+            case "import":
+                fields = importData();
+                break;
+            case "export":
+                exportData();
+                break;
+            default:
+                break;
+        }
+    }
+
+    document.getElementById('btn_group').addEventListener("click", function (event) {
+        buttonClick(event.target.id);
+    });
+
+    document.getElementById('fieldChk').addEventListener("click", function (event) {
+        changeFields(fields, document.getElementById("inputColumn").value.split(','));
+    });
+
+    // document.querySelectorAll("#data .input:click").forEach(e => {
+    //     e.parentNode.parentNode.remove();
+    // });
+</script>
+</body>
+</html>

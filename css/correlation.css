@@ -1,0 +1,51 @@
+.threshold_modal-content {
+    width: 1000px;
+    height: 600px;
+    background-color: #b4b4dc;
+    opacity: 0.9;
+    border-radius: 4px;
+    padding: 20px;
+    position: relative;
+}
+
+.input_rule {
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    height: 100%;
+    margin-right: 0px;
+}
+
+.input_rule label {
+    margin-right:  10px;
+}
+#num_of_Crul {
+    font-size: 15px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+    width: 20%;
+    margin: 0 20px 0 0;
+}
+
+#num_of_Crul::after {
+    border: none;
+}
+.form_header {
+    margin-bottom: 30px;
+}
+
+#confirm {
+    width: fit-content;
+    margin: 0 0 0 10px;
+}
+#name_of_Crul {
+    width: 30%;
+    margin: 0;
+    height: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+}
